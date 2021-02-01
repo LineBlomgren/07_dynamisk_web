@@ -9,7 +9,29 @@
 </head>
 
 <body>
+    <h1>Date-rådgivning</h1>
+    <p>Skriv din egen eller din partners alder ind for at se om i passer sammen aldersmæssigt</p>
+    <input type="text" id="button">
+    <button>Klik og kig i konsollen</button>
     <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let alder = document.querySelector("#button").value;
+            let udregning = alder / 2 + 7;
+
+            if (isNaN(alder)) {
+                console.log("Det er ikke en alder, prøv igen");
+            } else if (alder < 15) {
+                console.log("Du er enten for ung til at bruge dette site eller også dater du en mindreårig, hvilket er strengt forbudt!");
+            } else if (udregning < 15) {
+                console.log("Du er enten for ung til at bruge dette site eller også dater du en mindreårig, hvilket er strengt forbudt!");
+            } else if (alder > 110) {
+                console.log("Det kan vidst ikke helt lade sig gøre");
+            } else {
+                console.log(`Din partner skal være mindst ${udregning} år gammel`);
+            }
+        }
 
     </script>
 </body>
