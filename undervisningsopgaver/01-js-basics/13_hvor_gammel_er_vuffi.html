@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Den nye hundealder</h1>
+    <p>Indtast din hunds alder for at se hvor gammel den i virkeligheden er</p>
+    <input type="text" id="button">
+    <button>Klik og kig i konsollen!</button>
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let hundeAlder = document.querySelector("#button").value;
+            let nyHundeAlder = 16 * Math.log(hundeAlder) + 31;
+
+            if (isNaN(hundeAlder)) {
+                console.log("Det er ikke en alder, prøv igen");
+            } else if (hundeAlder > 30) {
+                console.log("Det kan ikke lade sig gøre. Verdens ældste hund blev 30 år");
+            } else if (hundeAlder <= 0) {
+                console.log("Det kan ikke lade sig gøre.");
+            } else {
+                console.log(`Din hund er ${nyHundeAlder} år gammel i menneskeår`);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
