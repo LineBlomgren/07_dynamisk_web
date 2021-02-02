@@ -10,26 +10,44 @@
 
 <body>
     <h1>Date-rådgivning</h1>
-    <p>Skriv din egen eller din partners alder ind for at se om i passer sammen aldersmæssigt</p>
-    <input type="text" id="button">
+    <p>Din alder</p>
+    <input type="text" id="dinAlderTxt">
+    <p>Din dates alder</p>
+    <input type="text" id="dinDatesAlderTxt">
     <button>Klik og kig i konsollen</button>
     <script>
+        let dinAlder;
+        let datesAlder;
+        let minimumAlder;
+        let maximumAlder;
+
         document.querySelector("button").addEventListener("click", buttonClicked);
 
         function buttonClicked() {
-            let alder = document.querySelector("#button").value;
-            let udregning = alder / 2 + 7;
+            dinAlder = document.querySelector("#dinAlderTxt").value;
+            datesAlder = document.querySelector("#dinDatesAlderTxt").value;
+            // Hvad er det yngste din date må være.
 
-            if (isNaN(alder)) {
-                console.log("Det er ikke en alder, prøv igen");
-            } else if (alder < 15) {
-                console.log("Du er enten for ung til at bruge dette site eller også dater du en mindreårig, hvilket er strengt forbudt!");
-            } else if (udregning < 15) {
-                console.log("Du er enten for ung til at bruge dette site eller også dater du en mindreårig, hvilket er strengt forbudt!");
-            } else if (alder > 110) {
-                console.log("Det kan vidst ikke helt lade sig gøre");
+            minimumAlder = Math.round(dinAlder / 2 + 7);
+            maximumAlder = Math.round((dinAlder * 2) - 7);
+            console.log("Minimums alder", minimumAlder);
+            console.log("Maximums alder", maximumAlder);
+
+            if (dinAlder < 15 || datesAlder < 15) {
+                console.log("Enten er en af partnerne for unge eller også har du glemt at indtaste en alder!");
             } else {
-                console.log(`Din partner skal være mindst ${udregning} år gammel`);
+                if (datesAlder >= minimumAlder && datesAlder <= maximumAlder) {
+                    console.log("Det er passende");
+
+                } else if (isNaN(dinAlder || datesAlder)) {
+                    console.log("Det er ikke en alder!");
+                } else if (dinAlder > 110 || datesAlder > 110) {
+                    console.log("Det kan vidst ikke helt lade sig gøre");
+                } else if (datesAlder < minimumAlder) {
+                    console.log(`Du er ${dinAlder} og din date er ${datesAlder}. Din date er ${minimumAlder - datesAlder} år for ung`);
+                } else if (datesAlder >= maximumAlder) {
+                    console.log(`Du er ${dinAlder} og din date er ${datesAlder}. Din Date er ${datesAlder - maximumAlder} år for gammel`);
+                }
             }
         }
 
