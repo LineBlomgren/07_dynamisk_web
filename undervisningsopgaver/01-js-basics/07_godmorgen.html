@@ -10,20 +10,16 @@
 
 <body>
     <script>
-        let date = new Date();
-        let hours = date.getHours();
-
-        let resultat;
-        if (hours < 10) {
-            resultat = "Godmorgen";
+        const hours = new Date().getHours();
+        if (hours < 5) {
+            console.log("Godnat");
+        } else if (hours < 10) {
+            console.log("Godmorgen");
         } else if (hours < 18) {
-            resultat = "Goddag";
-        } else if (hours < 24) {
-            resultat = "Godaften";
+            console.log("Goddag");
         } else {
-            resultat = "Godnat";
+            console.log("Godaften");
         }
-        console.log(resultat);
 
     </script>
 </body>

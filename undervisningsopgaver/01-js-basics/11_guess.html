@@ -12,67 +12,28 @@
     <h1>Gæt et tal</h1>
     <p>Indtast et tal mellem 0 og 20 og se om du kan gætte det rigtige</p>
 
-    <div class="resultatParagrafer">
-        <p class="gaet"></p>
-    </div>
+    <input type="text" id="gaet">
 
-    <label for="gaetFelt">Skriv et svar:</label><input type="text" id="gaetFelt" class="gaetFelt">
-    <input type="submit" value="Send svar" class="gaetSend">
+    <button>Gæt og kig i konsollen!</button>
+    <button id="nyt_spil">Nyt spil</button>
+
     <script>
-        let gaetOptaelling = 1;
-        let genstartKnap;
-        const gaet = document.querySelector(".gaet");
-        const gaetSend = document.querySelector(".gaetSend");
-        const gaetFelt = document.querySelector(".gaetFelt");
-        let brugerGaet = Number(gaetFelt.value);
-        let randomTal = Math.floor((Math.random() * 20) + 0);
-        console.log(`Tallet er nu ${randomTal}`);
+        const randomTal = Math.round(Math.random() * 20 + 0);
+        let antalGaet = 0;
+        document.querySelector("button").addEventListener("click", gaetTal);
 
-
-        document.querySelector(".gaetSend").addEventListener("click", checkGaet);
-
-        function checkGaet() {
-            if (brugerGaet === randomTal) {
-                console.log(`Tillykke du har vundet med ${gaetOptaelling} gæt`);
-                setGameOver();
-            } else if (gaetOptaelling === 10) {
-                console.log("Du har tabt!");
+        function gaetTal() {
+            antalGaet++;
+            const gaet = document.querySelector("#gaet").value;
+            console.log("Brugergæt", gaet);
+            if (gaet == randomTal) {
+                console.log(`Korrekt! Du har gættet ${antalGaet} gange`);
+            } else if (gaet < randomTal) {
+                console.log("Det var for lavt...");
+            } else if (gaet > randomTal) {
+                console.log("Skriv et tal mellem 0 og 20!")
             } else {
-                console.log("Forkert");
-                if (brugerGaet < randomTal) {
-                    console.log("Sidste gæt var for lavt");
-                } else if (brugerGaet > randomTal) {
-                    console.log("Sidste gæt var for højt");
-                }
-            }
-
-            gaetOptaelling++;
-            gaetFelt.value = "";
-
-
-            gaetOptaelling === 1
-
-            function setGameOver() {
-                gaetFelt.disabled = true;
-                gaetSend.disabled = true;
-                genstartKnap = document.createElement("button");
-                genstartKnap.textContent = "Start nyt spil";
-                document.body.append(genstartKnap);
-                genstartKnap.addEventListener("click", resetGame);
-            }
-
-            function resetGame() {
-                gaetOptaelling = 0;
-
-                const genstartParagrafer = document.querySelectorAll(".resultatParagrafer p");
-                for (let i = 0; i < genstartParagrafer.length; i++) {
-
-                }
-
-                gaetFelt.disabled = false;
-                gaetSend.disabled = false;
-
-                randomTal = Math.floor(Math.random() * 20) + 0;
+                console.log("Det var for højt...");
             }
         }
 
