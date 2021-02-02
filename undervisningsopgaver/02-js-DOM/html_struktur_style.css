@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+}
+
+img {
+    max-width: auto;
+}
+
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0px;
+}
+
+article {
+    max-width: 3;
+    border: 2px solid black;
+    margin-bottom: 90px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+    border: 2px solid #d6d6d6;
+}
