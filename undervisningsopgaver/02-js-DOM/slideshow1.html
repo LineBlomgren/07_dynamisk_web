@@ -10,10 +10,22 @@
 
 <body>
     <h1>Tro på det...</h1>
-    <img src="billeder/img1.png" alt="Slide 1">
+    <img src="billeder/img1.png" alt="Slide" id="slide">
+
     <button>Videre</button>
     <p>Billeder brugt med tilladelse af Rasmus Bregnhøi</p>
     <script>
+        document.addEventListener("click", skiftBillede);
+        let slideshowBilleder = document.getElementById("slide");
+        let billedeTaeller = ["billeder/img1.png", "billeder/img2.png", "billeder/img3.png", "billeder/img4.png", "billeder/img5.png", "billeder/img6.png", "billeder/img7.png", "billeder/img8.png"];
+        let billedeNummer = 1;
+
+        function skiftBillede() {
+            console.log("Der er klikket videre");
+            slideshowBilleder.setAttribute("src", billedeTaeller[billedeNummer]);
+            billedeTaeller++;
+        }
+
     </script>
 </body>
 
