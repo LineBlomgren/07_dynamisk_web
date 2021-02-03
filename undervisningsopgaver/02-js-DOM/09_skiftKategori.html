@@ -108,40 +108,40 @@
             let article1 = document.querySelector("#first_article");
             console.log(article1);
 
-            document.addEventListener("click", klikPaaBillede);
-
-            function klikPaaBillede() {
-                console.log("Der er klikket på billedet");
-                randomTal = Math.round(Math.random() * 10 + 1);
-                let img1 = document.querySelector("#first_article img");
-                console.log(img1);
-                img1.src = "https://placeimg.com/400/300/arch?t=" + randomTal;
-                img1.alt = "Tilfældigt billede";
-            }
+            let img1 = document.querySelector("#first_article img");
+            console.log(img1);
+            img1.src = "billeder/billede_01.jpg";
+            img1.alt = "Klippe";
 
             let overskrift1 = document.querySelector("#first_article h3");
             console.log(overskrift1);
-            overskrift1.innerHTML = "<h3>Tilfældigt billede</h3>";
+            overskrift1.innerHTML = "<h3>Klippe</h3>";
 
             let tekst1 = document.querySelector("#first_article p");
             console.log(tekst1);
-            tekst1.innerHTML = "<p>Dette er et tilfældigt billede.</p>";
+            tekst1.innerHTML = "<p>Dette er en klippe.</p>";
 
             let article2 = document.querySelector("#second_article");
             console.log(article2);
 
+            document.addEventListener("click", skift);
             let img2 = document.querySelector("#second_article img");
-            console.log(img2);
-            img2.src = "billeder/billede_04.jpg";
-            img2.alt = "Computer";
+            const kategorier = ["animals", "arch", "people", "nature", "tech"];
+
+            function skift() {
+                console.log("Der er klikket på billedet");
+                const nummer = Math.round(Math.random() * 4);
+                img2.src = "https://placeimg.com/640/480/" + kategorier[nummer];
+                img2.alt = kategorier[nummer];
+            }
 
             let overskrift2 = document.querySelector("#second_article h3");
             console.log(overskrift2);
-            overskrift2.textContent = "Computer";
+            overskrift2.textContent = "Tilfældigt billede";
 
             let tekst2 = document.querySelector("#second_article p");
             console.log(tekst2);
-            tekst2.textContent = "Dette er en computer.";
+            tekst2.textContent = "Dette er et tilfældigt billede.";
 
             let footer = document.querySelector("footer");
             console.log(footer);
