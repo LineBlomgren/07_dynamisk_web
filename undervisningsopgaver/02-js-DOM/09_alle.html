@@ -12,6 +12,13 @@
             line-height: 150%;
         }
 
+        .typo2 {
+            font-family: monospace;
+            color: darkblue;
+            line-height: 150%;
+            font-size: 2vw;
+        }
+
     </style>
 
 </head>
@@ -40,13 +47,28 @@
             alleTekster.forEach(p => {
                 p.addEventListener("click", () => {
                     p.classList.add("typo");
-                    console.log("Tryk på P'er");
+                    console.log("Tryk på p'er");
+                })
+            })
+
+            const alleOverskrifter = document.querySelectorAll("h3");
+            alleOverskrifter.forEach(h3 => {
+                h3.addEventListener("click", () => {
+                    h3.classList.add("typo2");
+                    console.log("Tryk på h3'er");
                 })
             })
             document.querySelector("button").addEventListener("click", () => {
                 alleTekster.forEach(p => {
                     p.classList.remove("typo");
-                    console.log("P'er er blevet genstartet");
+                    console.log("p'ere er blevet genstartet");
+                })
+            })
+
+            document.querySelector("button").addEventListener("click", () => {
+                alleOverskrifter.forEach(h3 => {
+                    h3.classList.remove("typo2");
+                    console.log("h3'ere er blevet genstartet");
                 })
             })
         }
