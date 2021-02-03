@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skift billede</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            border: 2px solid #d6d6d6;
+            margin: 0px;
+        }
+
+        footer {
+            text-align: center;
+            border: 2px solid #d6d6d6;
+            margin: 0px;
+        }
+
+        main {
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 70px;
+        }
+
+        article {
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+        <section id="section_wrapper">
+            <article id="first_article">
+                <img src="billeder/billede_01.jpg" alt="Billede af klippe">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum fugiat asperiores, architecto nesciunt deserunt recusandae atque ea libero quia in praesentium, repellendus. Reiciendis quaerat accusantium quas nostrum et, quis impedit eius aliquid culpa, sequi voluptatibus ex soluta consequuntur tenetur.</p>
+            </article>
+            <article id="second_article">
+                <img src="billeder/billede_02.jpg" alt="Billede af trafik">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis totam non voluptate possimus quidem excepturi quasi ipsum tenetur illo sed, commodi consequatur voluptatem assumenda blanditiis necessitatibus suscipit a natus. Aut saepe sequi, eum quos praesentium? Minus quod provident aspernatur excepturi.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+            let randomTal;
+
+            let header = document.querySelector("header");
+            console.log(header);
+
+            let titel = document.querySelector("header:first-child h1");
+            console.log(titel);
+            titel.innerHTML = "<h1>Billedegalleri</h1>";
+            //        titel.textContent = "Billedegalleri";
+
+            let main = document.querySelector("main");
+            console.log(main);
+
+            let undertitel = document.querySelector("main h2");
+            console.log(undertitel);
+
+            let section = document.querySelector("section");
+            console.log(section);
+
+            let article1 = document.querySelector("#first_article");
+            console.log(article1);
+
+            document.addEventListener("click", klikPaaBillede);
+
+            function klikPaaBillede() {
+                console.log("Der er klikket på billedet");
+                randomTal = Math.round(Math.random() * 10 + 1);
+                let img1 = document.querySelector("#first_article img");
+                console.log(img1);
+                img1.src = "https://placeimg.com/400/300/arch?t=" + randomTal;
+                img1.alt = "Tilfældigt billede";
+            }
+
+            let overskrift1 = document.querySelector("#first_article h3");
+            console.log(overskrift1);
+            overskrift1.innerHTML = "<h3>Tilfældigt billede</h3>";
+
+            let tekst1 = document.querySelector("#first_article p");
+            console.log(tekst1);
+            tekst1.innerHTML = "<p>Dette er et tilfældigt billede.</p>";
+
+            let article2 = document.querySelector("#second_article");
+            console.log(article2);
+
+            let img2 = document.querySelector("#second_article img");
+            console.log(img2);
+            img2.src = "billeder/billede_04.jpg";
+            img2.alt = "Computer";
+
+            let overskrift2 = document.querySelector("#second_article h3");
+            console.log(overskrift2);
+            overskrift2.textContent = "Computer";
+
+            let tekst2 = document.querySelector("#second_article p");
+            console.log(tekst2);
+            tekst2.textContent = "Dette er en computer.";
+
+            let footer = document.querySelector("footer");
+            console.log(footer);
+
+            let footerTekst = document.querySelector("footer p");
+            console.log(footerTekst);
+
+            let nySektion = document.querySelector("section");
+            // Nyt artikel element
+            let article3 = document.createElement("article");
+            // Nyt #id
+            article3.id = "third_article";
+            // Nyt billede
+            let img3 = document.createElement("img");
+            img3.src = "billeder/billede_05.jpg";
+            img3.alt = "Landskab";
+            // Nyt h3 element
+            let overskrift3 = document.createElement("h3");
+            // Ny tekst til overskrift
+            let tekstTilOverskrift3 = document.createTextNode("Landskab");
+            // Ny tekst
+            let tekst3 = document.createElement("p");
+            // Ny tekst til tekst
+            let tekstTilTekst3 = document.createTextNode("Dette er et landskab.");
+
+            // Tilføjelse af billede til artikel
+            article3.appendChild(img3);
+            // Tilføjelse af tekst til tekst
+            tekst3.appendChild(tekstTilTekst3);
+            // Tilføjelse af tekst til overskrift
+            overskrift3.appendChild(tekstTilOverskrift3);
+            // Tilføjelse af overskrift til artikel
+            article3.appendChild(overskrift3);
+            // Tilføjelse af tekst til artikel
+            article3.appendChild(tekst3);
+            // Tilføjelse af artikel til sektion
+            nySektion.appendChild(article3);
+        }
+
+    </script>
+</body>
+
+</html>
