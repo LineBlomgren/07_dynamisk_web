@@ -19,15 +19,15 @@
 <body>
     <button>Reset</button>
     <h3>En</h3>
-    <p class="tekst">Gochujang blue bottle iPhone quinoa, umami lumbersexual semiotics disrupt coloring book squid. Tilde banjo flannel PBR&B umami vape plaid occupy prism lumbersexual man braid. </p>
+    <p>Gochujang blue bottle iPhone quinoa, umami lumbersexual semiotics disrupt coloring book squid. Tilde banjo flannel PBR&B umami vape plaid occupy prism lumbersexual man braid. </p>
     <h3>Lille</h3>
-    <p class="tekst">Fam before they sold out edison bulb, la croix sartorial cray poke yuccie copper mug ugh. Kickstarter yr tumblr synth.</p>
+    <p>Fam before they sold out edison bulb, la croix sartorial cray poke yuccie copper mug ugh. Kickstarter yr tumblr synth.</p>
     <h3>Bitte</h3>
-    <p class="tekst">Selvage authentic heirloom put a bird on it umami sustainable bitters meh bicycle rights kombucha af squid. DIY air plant drinking vinegar XOXO raw denim ethical semiotics. </p>
+    <p>Selvage authentic heirloom put a bird on it umami sustainable bitters meh bicycle rights kombucha af squid. DIY air plant drinking vinegar XOXO raw denim ethical semiotics. </p>
     <h3>Smule</h3>
-    <p class="tekst">Roof party tumeric next level etsy church-key plaid. Fashion axe deep v tumeric kickstarter tofu narwhal direct trade. Hexagon gentrify pitchfork ethical echo park. </p>
+    <p>Roof party tumeric next level etsy church-key plaid. Fashion axe deep v tumeric kickstarter tofu narwhal direct trade. Hexagon gentrify pitchfork ethical echo park. </p>
     <h3>Tekst</h3>
-    <p class="tekst">Hella unicorn pinterest organic. Hot chicken activated charcoal chia you probably haven't heard of them slow-carb fingerstache microdosing sartorial four loko etsy yr locavore. Edison bulb trust fund try-hard salvia direct trade tbh.</p>
+    <p>Hella unicorn pinterest organic. Hot chicken activated charcoal chia you probably haven't heard of them slow-carb fingerstache microdosing sartorial four loko etsy yr locavore. Edison bulb trust fund try-hard salvia direct trade tbh.</p>
 
 
     <script>
@@ -35,14 +35,20 @@
 
         function start() {
             console.log("DOM er loaded");
-        }
 
-        const alleTekster = document.querySelectorAll(".tekst");
-        alleTekster.forEach(tekst => tekst.addEventListener("click", aktiverTypo));
-
-        function aktiverTypo() {
-            this.classList.toggle("typo");
-            console.log("P bliver togglet");
+            const alleTekster = document.querySelectorAll("p");
+            alleTekster.forEach(p => {
+                p.addEventListener("click", () => {
+                    p.classList.add("typo");
+                    console.log("Tryk på P'er");
+                })
+            })
+            document.querySelector("button").addEventListener("click", () => {
+                alleTekster.forEach(p => {
+                    p.classList.remove("typo");
+                    console.log("P'er er blevet genstartet");
+                })
+            })
         }
 
     </script>
