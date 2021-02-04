@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis med template</title>
+    <style>
+        article {
+            border: 1px solid black;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section id="liste"></section>
+    <template>
+        <article id="dyr">
+            <h3></h3>
+            <img src="" alt="">
+            <p>Type: </p>
+            <p>Levested: </p>
+        </article>
+    </template>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let destination = document.querySelector("article");
+        let dyr = [{
+                "navn": "frø",
+                "type": "amifibe",
+                "billede": "billeder/frog.png",
+                "levested": "vandhullet"
+            }, {
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "billeder/pig.png",
+                "levested": "svinefarmen    "
+            }, {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "billede": "billeder/fox.png",
+                levested: "skoven"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "billede": "billeder/sild.jpg",
+                levested: "havet"
+            }
+
+            , {
+                "navn": "krokodille",
+                "type": "krybdyr",
+                "billede": "billeder/kroko.jpg",
+                levested: "floden"
+            }
+        ];
+
+        function start() {
+            console.log("DOM er loaded");
+
+            const container = document.querySelector("#liste");
+            const dyreTemplate = document.querySelector("template");
+            //            let listeVisning = document.querySelector("#array");
+            dyr.forEach(dyr => {
+                console.log(dyr);
+                let klon = dyreTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = dyr.navn;
+                klon.querySelector("img").src = dyr.billede;
+                //                klon.querySelector("p").textContent = dyr.type;
+                //                klon.querySelector("p").textContent = dyr.levested;
+                container.appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
+
+</html>
