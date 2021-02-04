@@ -10,20 +10,33 @@
 
 <body>
     <h1>Tro på det...</h1>
-    <img src="billeder/img1.png" alt="Slide" id="slide">
-
+    <img src="billeder/img1.png" alt="billede 1">
     <button>Videre</button>
     <p>Billeder brugt med tilladelse af Rasmus Bregnhøi</p>
-    <script>
-        document.addEventListener("click", skiftBillede);
-        let slideshowBilleder = document.getElementById("slide");
-        let billedeTaeller = ["billeder/img1.png", "billeder/img2.png", "billeder/img3.png", "billeder/img4.png", "billeder/img5.png", "billeder/img6.png", "billeder/img7.png", "billeder/img8.png"];
-        let billedeNummer = 1;
 
+    <script>
+        // Opret et array
+        let billeder = ["billeder/img1.png", "billeder/img2.png", "billeder/img3.png", "billeder/img4.png", "billeder/img5.png", "billeder/img6.png", "billeder/img7.png", "billeder/img8.png"];
+        // Klik på knap for at skifte billede
+
+        const knap = document.querySelector("button");
+        const billede = document.querySelector("img");
+        let number = 0;
+
+        knap.addEventListener("click", skiftBillede);
+
+        // Opret funktion til at skifte billede
         function skiftBillede() {
-            console.log("Der er klikket videre");
-            slideshowBilleder.setAttribute("src", billedeTaeller[billedeNummer]);
-            billedeTaeller++;
+            billede.src = "billeder/" + billeder[number];
+
+            if (number <= 6) {
+                number++;
+                knap.textContent = "Videre";
+
+            } else {
+                knap.textContent = "Forfra";
+                number = 0;
+            }
         }
 
     </script>
