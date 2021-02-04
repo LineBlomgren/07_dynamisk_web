@@ -4,14 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vis dyr</title>
+    <title>Dyr i array</title>
     <link rel="stylesheet" href="">
 </head>
 
 <body>
     <article id="liste">
-        <p></p>
-        <img src="" alt="">
     </article>
     <script>
         document.addEventListener("DOMContentLoaded", start);
@@ -22,8 +20,8 @@
             let dyr = [{
                     "navn": "frø",
                     "type": "amifibe",
-                    "billede": "billeder/frog.png";
-                    levested: "vandhullet";
+                    "billede": "billeder/frog.png",
+                    "levested": "vandhullet"
                 }, {
                     "navn": "gris",
                     "type": "pattedyr",
@@ -32,26 +30,30 @@
                 }, {
                     "navn": "ræv",
                     "type": "pattedyr",
-                    "billede": "billeder/fox.png";
-                    levested: "skoven";
+                    "billede": "billeder/fox.png",
+                    levested: "skoven"
                 }, {
                     "navn": "sild",
                     "type": "fisk",
-                    "billede": "billeder/sild.png";
-                    levested: "havet";
+                    "billede": "billeder/sild.png",
+                    levested: "havet"
                 }
 
                 , {
                     "navn": "krokodille",
                     "type": "krybdyr",
-                    "billede": "billeder/kroko.png";
-                    levested: "floden";
+                    "billede": "billeder/kroko.png",
+                    levested: "floden"
                 }
             ]
-            console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
-            let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
-            destination.querySelector("p").textContent = dyrInformation;
-            destination.querySelector("img").src = "billeder/pig.png";
+            const listeVisning = document.querySelector("#liste");
+            dyr.forEach(dyr => {
+                listeVisning.innerHTML += `<p>Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}</p>`
+            })
+            //            console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
+            // let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+            // destination.querySelector("p").textContent = dyrInformation;
+            // destination.querySelector("img").src = "billeder/pig.png";
         }
 
     </script>
