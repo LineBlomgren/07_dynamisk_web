@@ -199,6 +199,11 @@
             document.querySelector("#second_article").addEventListener("mouseover", backShadowVaek2);
             document.querySelector("#third_article").addEventListener("mouseover", backShadowVaek3);
 
+            // Tilføjelse af eventlistener
+            document.querySelector("#first_article").addEventListener("mouseout", backShadowPaa1);
+            document.querySelector("#second_article").addEventListener("mouseout", backShadowPaa2);
+            document.querySelector("#third_article").addEventListener("mouseout", backShadowPaa3);
+
             // Back-shadow er væk
             function backShadowVaek1() {
                 console.log("Back-shadow er væk på første artikel");
@@ -214,11 +219,6 @@
                 console.log("Back-shadow er væk på tredje artikel");
                 document.querySelector("#third_article").classList.remove("boxShadow");
             }
-
-            // Tilføjelse af eventlistener
-            document.querySelector("#first_article").addEventListener("mouseout", backShadowPaa1);
-            document.querySelector("#second_article").addEventListener("mouseout", backShadowPaa2);
-            document.querySelector("#third_article").addEventListener("mouseout", backShadowPaa3);
 
             // Back-shadow er på igen
             function backShadowPaa1() {
