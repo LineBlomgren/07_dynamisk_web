@@ -10,6 +10,7 @@
 
 <body>
     <article>
+        <p></p>
         <img src="" alt="">
     </article>
     <script>
@@ -26,6 +27,7 @@
             }
             console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+            destination.querySelector("p").textContent = dyrInformation;
             destination.querySelector("img").src = "billeder/pig.png";
         }
 
