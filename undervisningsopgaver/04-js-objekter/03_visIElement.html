@@ -17,16 +17,17 @@
     </article>
     <script>
         document.addEventListener("DOMContentLoaded", start);
+        let dyr = {
+            "navn": "Gris",
+            "type": "pattedyr",
+            "billede": "billeder/pig.png",
+            "levested": "svinefarme"
+        }
 
         function start() {
             console.log("DOM er loaded");
             let destination = document.querySelector("article");
-            let dyr = {
-                "navn": "Gris",
-                "type": "pattedyr",
-                "billede": "billeder/pig.png",
-                "levested": "svinefarme"
-            }
+
             console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
             destination.querySelector("h3").textContent = dyr.navn;
