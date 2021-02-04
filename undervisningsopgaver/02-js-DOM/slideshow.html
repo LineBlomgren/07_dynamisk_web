@@ -10,13 +10,13 @@
 
 <body>
     <h1>Tro på det...</h1>
-    <img src="billeder_til_slideshow/img1.png" alt="Billede 1">
+    <img src="billeder/img1.png" alt="Billede 1">
     <button>Videre</button>
     <p>Billeder brugt med tilladelse af Rasmus Bregnhøi</p>
 
     <script>
         // Opret et array
-        let billeder = ["billeder_til_slideshow/img1.png", "billeder_til_slideshow/img2.png", "billeder_til_slideshow/img3.png", "billeder_til_slideshow/img4.png", "billeder_til_slideshow/img5.png", "billeder_til_slideshow/img6.png", "billeder_til_slideshow/img7.png", "billeder_til_slideshow/img8.png"];
+        let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
         // Klik på knap for at skifte billede
 
         const knap = document.querySelector("button");
@@ -27,7 +27,7 @@
 
         // Opret funktion til at skifte billede
         function skiftBillede() {
-            billede.src = "billeder_til_slideshow/" + billeder[number];
+            billede.src = "billeder/" + billeder[number];
 
             if (number <= 6) {
                 number++;
