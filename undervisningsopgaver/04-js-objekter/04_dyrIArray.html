@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <article id="liste">
+    <article id="array">
     </article>
     <script>
         document.addEventListener("DOMContentLoaded", start);
@@ -46,14 +46,9 @@
                     levested: "floden"
                 }
             ]
-            const listeVisning = document.querySelector("#liste");
             dyr.forEach(dyr => {
-                listeVisning.innerHTML += `<p>Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}</p>`
+                console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
             })
-            //            console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
-            // let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
-            // destination.querySelector("p").textContent = dyrInformation;
-            // destination.querySelector("img").src = "billeder/pig.png";
         }
 
     </script>
