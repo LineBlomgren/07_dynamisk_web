@@ -12,12 +12,12 @@
         "navn": "ræv",
         "type": "pattedyr",
         "billede": "billeder/fox.png",
-        levested: "skoven"
+        "levested": "skoven"
             }, {
         "navn": "sild",
         "type": "fisk",
         "billede": "billeder/sild.jpg",
-        levested: "havet"
+        "levested": "havet"
             }
 
             , {
