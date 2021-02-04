@@ -12,7 +12,7 @@
     <article id="dyr">
         <h3></h3>
         <img src="" alt="">
-        <p>Type:</p>
+        <p id="idiot">Type:</p>
         <p>Levested:</p>
     </article>
     <script>
@@ -29,8 +29,9 @@
             }
             console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
-            destination.textContent = dyrInformation;
-            destination.src = dyr.billede;
+            destination.querySelector("h3").textContent = dyr.navn;
+            destination.querySelector("img").src = "billeder/pig.png";
+            destination.querySelector("p").textContent = "article:first-child p " + "gris";
         }
 
     </script>
