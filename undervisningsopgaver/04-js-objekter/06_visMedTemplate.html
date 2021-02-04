@@ -15,7 +15,6 @@
         h3 {
             font-size: 1.5rem;
         }
-
     </style>
 </head>
 
@@ -67,6 +66,7 @@
 
             const container = document.querySelector("#liste");
             const dyreTemplate = document.querySelector("template");
+
             dyr.forEach(dyr => {
                 console.log(dyr);
                 let klon = dyreTemplate.cloneNode(true).content;
@@ -77,8 +77,5 @@
                 container.appendChild(klon);
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
