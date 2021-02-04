@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objekter</title>
+    <title>Vis dyr</title>
     <link rel="stylesheet" href="">
 </head>
 
@@ -25,6 +25,7 @@
             console.log(`Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
             destination.textContent = dyrInformation;
+            destination.src = dyr.billede;
         }
 
     </script>
