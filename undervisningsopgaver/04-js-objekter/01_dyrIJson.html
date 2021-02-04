@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vis med template</title>
+    <title>Dyr i JSON</title>
     <style>
         article {
             border: 1px solid black;
@@ -15,7 +15,6 @@
         h3 {
             font-size: 1.5rem;
         }
-
     </style>
 </head>
 
@@ -35,21 +34,29 @@
 
         function start() {
             console.log("DOM er loaded");
-
             const container = document.querySelector("#liste");
             const dyreTemplate = document.querySelector("template");
-            dyr.forEach(dyr => {
-                console.log(dyr);
-                let klon = dyreTemplate.cloneNode(true).content;
-                klon.querySelector("h3").textContent = dyr.navn;
-                klon.querySelector("img").src = dyr.billede;
-                //                klon.querySelector("p").textContent = dyr.type;
-                //                klon.querySelector("p").textContent = dyr.levested;
-                container.appendChild(klon);
-            })
+
+            const fil = "alleDyr.json";
+
+            async function hentdata(fil) {
+                const resultat = await fetch(fil);
+                const jsonData = await resultat.json();
+                vis(jsonData);
+            }
+
+            function vis(dyr) {
+                dyr.forEach(dyr => {
+                    console.log(dyr);
+                    let klon = dyreTemplate.cloneNode(true).content;
+                    klon.querySelector("h3").textContent = dyr.navn;
+                    klon.querySelector("img").src = dyr.billede;
+                    //                klon.querySelector("p").textContent = dyr.type;
+                    //                klon.querySelector("p").textContent = dyr.levested;
+                    container.appendChild(klon);
+                })
+            }
+            hentdata(fil);
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
