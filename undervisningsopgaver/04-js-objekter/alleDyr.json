@@ -1,28 +1,26 @@
 [{
-        "navn": "frø",
-        "type": "amifibe",
-        "billede": "billeder/frog.png",
-        "levested": "vandhullet"
+    "navn": "frø",
+    "type": "amifibe",
+    "billede": "billeder/frog.png",
+    "levested": "vandhullet"
             }, {
-        "navn": "gris",
-        "type": "pattedyr",
-        "billede": "billeder/pig.png",
-        "levested": "svinefarmen    "
+    "navn": "gris",
+    "type": "pattedyr",
+    "billede": "billeder/pig.png",
+    "levested": "svinefarmen    "
             }, {
-        "navn": "ræv",
-        "type": "pattedyr",
-        "billede": "billeder/fox.png",
-        "levested": "skoven"
+    "navn": "ræv",
+    "type": "pattedyr",
+    "billede": "billeder/fox.png",
+    "levested": "skoven"
             }, {
-        "navn": "sild",
-        "type": "fisk",
-        "billede": "billeder/sild.jpg",
-        "levested": "havet"
-            }
-
-            , {
-        "navn": "krokodille",
-        "type": "krybdyr",
-        "billede": "billeder/kroko.jpg",
-        levested: "floden"
+    "navn": "sild",
+    "type": "fisk",
+    "billede": "billeder/sild.jpg",
+    "levested": "havet"
+            }, {
+    "navn": "krokodille",
+    "type": "krybdyr",
+    "billede": "billeder/kroko.jpg",
+    levested: "floden"
     }]
