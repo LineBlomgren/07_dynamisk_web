@@ -43,9 +43,12 @@
                     klon.querySelector(".motor").textContent = `Motor: ${bil.motor}`;
                     klon.querySelector(".km").textContent = `Km: ${bil.km}`;
                     console.log(bil);
-                    klon.querySelector(".udstyrListe").innerHTML = `<li>${bil.udstyr}</li>`;
+
+                    bil.udstyr.forEach(etUdstyr => {
+                        klon.querySelector(".udstyrListe").innerHTML += "<li>" + etUdstyr + "</li>";
+                    })
                     container.appendChild(klon);
-                })
+                });
             }
             hentdata(fil);
         }
