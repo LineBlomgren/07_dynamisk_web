@@ -22,5 +22,5 @@
     "navn": "krokodille",
     "type": "krybdyr",
     "billede": "billeder/kroko.jpg",
-    levested: "floden"
+    "levested": "floden"
     }]
