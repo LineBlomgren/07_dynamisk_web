@@ -21,8 +21,6 @@
         function start() {
             console.log("DOM er loaded");
             let destination = document.querySelector("article");
-            let tekst1 = document.querySelector("p");
-            let tekst2 = document.querySelector("p");
             let dyr = {
                 "navn": "Gris",
                 "type": "pattedyr",
@@ -33,8 +31,7 @@
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
             destination.querySelector("h3").textContent = dyr.navn;
             destination.querySelector("img").src = "billeder/pig.png";
-            destination.querySelector("article:first-child p").textContent = tekst1 + dyr.type;
-            destination.querySelector("article:last-child p").textContent = tekst2 + dyr.levested;
+            destination.querySelector("p").textContent = dyr.type;
         }
 
     </script>
