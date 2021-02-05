@@ -12,11 +12,12 @@
             padding: 5px;
         }
 
-/*
+        /*
         h3 {
         font-size: 1.5rem;
         }
 */
+
     </style>
 </head>
 
@@ -49,16 +50,19 @@
 
             function vis(dyr) {
                 dyr.forEach(dyr => {
-//                    console.log(dyr);
+                    //                    console.log(dyr);
                     let klon = dyreTemplate.cloneNode(true).content;
                     klon.querySelector("h3").textContent = dyr.navn;
                     klon.querySelector("img").src = dyr.billede;
-                    //                klon.querySelector("p").textContent = dyr.type;
-                    //                klon.querySelector("p").textContent = dyr.levested;
+                    klon.querySelector("article:first-child p").textContent += ` ${dyr.type}`;
+                    klon.querySelector("p:last-child").textContent += ` ${dyr.levested}`;
                     container.appendChild(klon);
                 })
             }
             hentdata(fil);
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
