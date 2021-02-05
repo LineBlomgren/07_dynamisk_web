@@ -13,9 +13,9 @@
     <template>
         <article>
             <h3 class="maerke"></h3>
-            <p class="model"></p>
-            <p class="motor"></p>
-            <p class="km"></p>
+            <p class="model">Model:</p>
+            <p class="motor">Motor:</p>
+            <p class="km">Km:</p>
             <ul class="udstyrListe"></ul>
         </article>
     </template>
@@ -39,9 +39,9 @@
                 biler.forEach(bil => {
                     let klon = bilerTemplate.cloneNode(true).content;
                     klon.querySelector(".maerke").textContent = bil.maerke;
-                    klon.querySelector(".model").textContent = `Model: ${bil.model}`;
-                    klon.querySelector(".motor").textContent = `Motor: ${bil.motor}`;
-                    klon.querySelector(".km").textContent = `Km: ${bil.km}`;
+                    klon.querySelector(".model").textContent += ` ${bil.model}`;
+                    klon.querySelector(".motor").textContent += ` ${bil.motor}`;
+                    klon.querySelector(".km").textContent += ` ${bil.km}`;
                     console.log(bil);
 
                     bil.udstyr.forEach(etUdstyr => {
