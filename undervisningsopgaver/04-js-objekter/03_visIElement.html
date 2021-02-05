@@ -32,7 +32,8 @@
             let dyrInformation = `Dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
             destination.querySelector("h3").textContent = dyr.navn;
             destination.querySelector("img").src = "billeder/pig.png";
-            destination.querySelector("p").textContent = dyr.type;
+            destination.querySelector("article:first-child p").textContent += ` ${dyr.type}`;
+            destination.querySelector("p:last-child").textContent += ` ${dyr.levested}`;
         }
 
     </script>
