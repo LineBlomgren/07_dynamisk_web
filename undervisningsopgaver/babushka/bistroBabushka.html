@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            margin: 20px;
+            padding: 0px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        main {
+            margin-bottom: 7px;
+            margin-top: 7px;
+            margin-right: 7px;
+            margin-left: 7px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 10px;
+        }
+
+        article {
+            border: 2px solid orange;
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: orange;
+        }
+
+        p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="babushka"></h1>
+    <section id="liste"></section>
+    <template>
+        <main>
+            <article>
+                <img src="" alt="" class="billede">
+                <h2 class="navn"></h2>
+                <p class="foedselsdag">Fødselsdag:</p>
+                <p class="hobby">Hobby:</p>
+                <p class="titel">Titel:</p>
+                <p class="troende">Troende:</p>
+            </article>
+        </main>
+    </template>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        // const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+        // const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+
+        function start() {
+            console.log("DOM er loaded");
+            const muligheder = {
+                headers: {
+                    //                    'x-apikey': "600fe9211346a1524ff12e31"
+                }
+            };
+
+            async function hentData() {
+                const resultat = await fetch(url, muligheder);
+                const json = await resultat.json();
+                vis(json);
+            }
+
+            const container = document.querySelector("#liste");
+            const babushkaTemplate = document.querySelector("template");
+
+            function vis(json) {
+                console.log(json);
+                document.querySelector(".babushka").textContent = "Babushka";
+                json.forEach(person => {
+                    let klon = babushkaTemplate.cloneNode(true).content;
+                    klon.querySelector(".billede").src = medieurl + person.billede;
+                    klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
+                    const str = person.fødselsdag;
+                    const patt = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
+                    const result = str.match(patt);
+                    klon.querySelector(".foedselsdag").textContent += ` ${result}`;
+                    klon.querySelector(".hobby").textContent += ` ${person.hobby}`;
+                    klon.querySelector(".titel").textContent += ` ${person.titel}`;
+                    klon.querySelector(".troende").textContent += ` ${person.troende}`;
+                    console.log(person);
+                    container.appendChild(klon);
+                })
+            };
+            hentData();
+        }
+    </script>
+</body></html>
