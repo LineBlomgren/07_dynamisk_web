@@ -96,18 +96,20 @@
                 console.log(json);
                 document.querySelector(".persongalleri").textContent = "Persongalleri";
                 json.forEach(person => {
-                    let klon = personerTemplate.cloneNode(true).content;
-                    klon.querySelector(".billede").src = medieurl + person.billede;
-                    klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
-                    const str = person.fødselsdag;
-                    const patt = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
-                    const result = str.match(patt);
-                    klon.querySelector(".foedselsdag").textContent += ` ${result}`;
-                    klon.querySelector(".hobby").textContent += ` ${person.hobby}`;
-                    klon.querySelector(".titel").textContent += ` ${person.titel}`;
-                    klon.querySelector(".troende").textContent += ` ${person.troende}`;
-                    console.log(person);
-                    container.appendChild(klon);
+                    if (filter == person.troende) {
+                        let klon = personerTemplate.cloneNode(true).content;
+                        klon.querySelector(".billede").src = medieurl + person.billede;
+                        klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
+                        const str = person.fødselsdag;
+                        const patt = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
+                        const result = str.match(patt);
+                        klon.querySelector(".foedselsdag").textContent += ` ${result}`;
+                        klon.querySelector(".hobby").textContent += ` ${person.hobby}`;
+                        klon.querySelector(".titel").textContent += ` ${person.titel}`;
+                        klon.querySelector(".troende").textContent += ` ${person.troende}`;
+                        console.log(person);
+                        container.appendChild(klon);
+                    }
                 })
             };
             hentData();
