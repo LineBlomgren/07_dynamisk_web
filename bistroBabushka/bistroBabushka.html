@@ -128,15 +128,15 @@
                 const bistroBabushkaTemplate = document.querySelector("template");
                 container.textContent = "";
                 json.forEach(ret => {
-                    if (filter == ret.retter || filter == "alle") {
+                    if (filter == ret.kategori || filter == "alle") {
                         let klon = bistroBabushkaTemplate.cloneNode(true).content;
                         klon.querySelector(".billede").src = medieurl + ret.billede;
                         klon.querySelector(".navn").textContent = ret.navn;
                         //                        klon.querySelector(".langBeskrivelse").textContent = ret.langbeskrivelse;
                         klon.querySelector(".kortBeskrivelse").textContent = ret.kortbeskrivelse;
                         //                        klon.querySelector(".oprindelsesRegion").textContent += ` ${ret.oprindelsesregion}`;
-                        klon.querySelector(".kategori").textContent += ` ${ret.kategori}`;
-                        klon.querySelector(".pris").textContent += ` ${ret.pris}`;
+//                        klon.querySelector(".kategori").textContent += ` ${ret.kategori}`;
+                        klon.querySelector(".pris").textContent += ` ${ret.pris} ,-`;
                         console.log(ret);
                         container.appendChild(klon);
                     }
