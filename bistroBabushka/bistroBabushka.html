@@ -131,8 +131,8 @@
                         let klon = bistroBabushkaTemplate.cloneNode(true).content;
                         klon.querySelector(".billede").src = medieurl + ret.billede;
                         klon.querySelector(".navn").textContent = ret.navn;
-                        klon.querySelector(".langBeskrivelse").textContent = ret.langbeskrivelse;
-                        //                        klon.querySelector(".kortBeskrivelse").textContent = ret.kortbeskrivelse;
+                        //                        klon.querySelector(".langBeskrivelse").textContent = ret.langbeskrivelse;
+                        klon.querySelector(".kortBeskrivelse").textContent = ret.kortbeskrivelse;
                         //                        klon.querySelector(".oprindelsesRegion").textContent += ` ${ret.oprindelsesregion}`;
                         klon.querySelector(".pris").textContent += ` ${ret.pris}`;
                         console.log(ret);
