@@ -86,6 +86,7 @@
                 <p class="langBeskrivelse"></p>
                 <p class="kortBeskrivelse"></p>
                 <p class="oprindelsesRegion"></p>
+                <p class="kategori">Kategori:</p>
                 <p class="pris">Pris:</p>
             </article>
         </main>
@@ -134,6 +135,7 @@
                         //                        klon.querySelector(".langBeskrivelse").textContent = ret.langbeskrivelse;
                         klon.querySelector(".kortBeskrivelse").textContent = ret.kortbeskrivelse;
                         //                        klon.querySelector(".oprindelsesRegion").textContent += ` ${ret.oprindelsesregion}`;
+                        klon.querySelector(".kategori").textContent += ` ${ret.kategori}`;
                         klon.querySelector(".pris").textContent += ` ${ret.pris}`;
                         console.log(ret);
                         container.appendChild(klon);
