@@ -60,7 +60,6 @@
         .valgt {
             background-color: red;
         }
-
     </style>
 </head>
 
@@ -80,9 +79,11 @@
             <article class="personer">
                 <img src="" alt="" class="billede">
                 <h2 class="navn"></h2>
+<!--
                 <p class="foedselsdag">Fødselsdag:</p>
                 <p class="hobby">Hobby:</p>
                 <p class="titel">Titel:</p>
+-->
                 <p class="troende">Troende:</p>
             </article>
         </main>
@@ -128,12 +129,12 @@
                         let klon = personerTemplate.cloneNode(true).content;
                         klon.querySelector(".billede").src = medieurl + person.billede;
                         klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
-                        const str = person.fødselsdag;
-                        const patt = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
-                        const result = str.match(patt);
-                        klon.querySelector(".foedselsdag").textContent += ` ${result}`;
-                        klon.querySelector(".hobby").textContent += ` ${person.hobby}`;
-                        klon.querySelector(".titel").textContent += ` ${person.titel}`;
+//                        const str = person.fødselsdag;
+     // const patt = /[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/;
+     // const result = str.match(patt);
+     // klon.querySelector(".foedselsdag").textContent += ` ${result}`;
+     // klon.querySelector(".hobby").textContent += ` ${person.hobby}`;
+     // klon.querySelector(".titel").textContent += ` ${person.titel}`;
                         klon.querySelector(".troende").textContent += ` ${person.troende}`;
                         klon.querySelector(".personer").addEventListener("click", () => visDetaljer(person));
                         console.log(person);
@@ -143,12 +144,9 @@
             }
 
             function visDetaljer(hvem) {
-                location.href = `detaljerPersongalleri.html?id${hvem._id}`;
+                location.href = `detaljerSingleViewPersongalleri.html?id=${hvem._id}`;
             }
             hentData();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
