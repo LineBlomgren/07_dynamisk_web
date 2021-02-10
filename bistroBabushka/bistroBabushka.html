@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <title>Bistro Babushka</title>
     <style>
         * {
@@ -17,23 +18,28 @@
             padding: 0px;
         }
 
+        /*
         header {
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
-            background-color: orange;
-            height: 550px;
-            width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        background-color: orange;
+        height: 550px;
+        width: 100%;
         }
+*/
 
         img {
             width: 100%;
             border-radius: 20px;
         }
 
+        .splash {
+            overflow: hidden;
+            background-color: black;
+        }
+
         .headerBillede {
-            max-width: 100%;
-            max-height: 100%;
             border-radius: 0px;
             display: block;
         }
@@ -41,8 +47,9 @@
         main {
             margin-bottom: 7px;
             margin-top: 7px;
-            margin-right: 20px;
-            margin-left: 20px;
+            max-width: 1320px;
+            margin-right: 7px;
+            margin-left: 7px;
         }
 
         #first_section {
@@ -62,28 +69,38 @@
         }
 
         article {
-            border: 2px solid orange;
             padding: 15px;
             border-radius: 20px;
+            background-color: #eeebff;
         }
 
         h1 {
-            margin-bottom: auto;
+            font-family: 'Bungee Shade', cursive;
+            font-size: 70px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            color: white;
+            position: relative;
+            top: 290px;
+            right: 400px;
+
         }
 
         h2 {
-            margin: 0 auto;
-            width: 72px;
-            font-size: 2.1vw;
-            margin-top: 20px;
+            font-size: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 100px;
             margin-bottom: 30px;
-            border-bottom: 2px solid orange;
+            border-bottom: 1px solid #e8e8e8;
+            border-top: 1px solid #e8e8e8;
+            color: lightcoral;
         }
 
         h3 {
             margin-top: 10px;
             margin-bottom: 10px;
-            color: orange;
         }
 
         p {
@@ -105,16 +122,17 @@
             width: 400px;
             height: 35px;
             justify-content: center;
-            background-color: burlywood;
+            background-color: #95b2ff;
             border: none;
         }
 
         button:hover {
-            background-color: bisque;
+            background-color: #d5e1ff;
         }
 
         .valgt {
-            background-color: #8100e0;
+            background-color: #457aaf;
+            color: #bbe6f4;
         }
 
     </style>
@@ -122,8 +140,10 @@
 
 <body>
     <header>
-        <h1>Bistro Babushka</h1>
-        <img src="billeder/billede_01.jpg" alt="Billede af madret" class="headerBillede">
+        <div class="splash">
+            <h1>Bistro Babushka</h1>
+            <img src="billeder/billede_01.jpg" alt="Billede af madret" class="headerBillede">
+        </div>
     </header>
     <div id="first_section">
         <nav>
