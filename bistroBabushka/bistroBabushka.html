@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>Bistro Babushka</title>
     <style>
         * {
@@ -12,8 +17,6 @@
             margin: 0px;
             padding: 0px;
         }
-
-        header {}
 
         body {
             margin: 0px;
@@ -30,6 +33,16 @@
             height: 370px;
         }
 
+        .splash_citat {
+            font-family: 'Exo', sans-serif;
+            font-size: 30px;
+            font-weight: 500;
+            position: absolute;
+            left: 350px;
+            top: 290px;
+            color: #fff3f1;
+        }
+
         .headerBillede {
             border-radius: 0px;
             display: block;
@@ -38,6 +51,8 @@
         main {
             margin-bottom: 15px;
             margin-top: 15px;
+            margin-left: 50px;
+            margin-right: 50px;
             padding-right: 15px;
             padding-left: 15px;
         }
@@ -47,12 +62,13 @@
             max-width: 1200px;
             margin-bottom: 80px;
             margin-top: 15px;
-            border-top: 1px solid #ededed;
-            border-bottom: 1px solid #ededed;
+            border-top: 1.5px solid #dd9797;
+            border-bottom: 1.5px solid #dd9797;
         }
 
         #first_section {
             margin: auto;
+            padding-top: 80px;
             max-width: 900px;
         }
 
@@ -70,36 +86,49 @@
 
         article {
             padding: 10px;
-            border-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
             box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+            cursor: pointer;
         }
 
         h1 {
-            font-family: 'Bungee Shade', cursive;
+            font-family: 'Exo', sans-serif;
+            font-size: 90px;
+            position: absolute;
+            left: 200px;
+            top: 180px;
+            color: #fff3f1;
+            /*
             display: flex;
-
+            flex-direction: row;
+            justify-content: flex-start;
+*/
+            margin: auto;
+            z-index: 10;
         }
 
         h2 {
+            font-family: 'Roboto Condensed', sans-serif;
             font-size: 35px;
             margin: auto;
-            max-width: 1150px;
-            /*
-
-            margin-left: 200px;
-            margin-right: 200px;
-*/
-            margin-top: 150px;
+            text-align: center;
+            margin-top: 90px;
             margin-bottom: 0px;
-
+            color: #530101;
         }
 
         h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 26px;
             margin-top: 10px;
             margin-bottom: 10px;
+            color: #530101;
         }
 
         p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
             margin-bottom: 5px;
         }
 
@@ -108,54 +137,57 @@
         }
 
         nav {
-            margin-top: 90px;
+            margin-top: 50px;
             margin-bottom: 50px;
             display: flex;
             justify-content: center;
             flex-direction: row;
-            /*
-            margin: auto;
-            max-width: 1200px;
-*/
             gap: 20px;
         }
 
         button {
+            font-family: 'Source Sans Pro', sans-serif;
             width: 400px;
             height: 35px;
             justify-content: center;
-            background-color: #95b2ff;
+            background-color: #a20606;
             border: none;
-        }
-
-        button:hover {
-            background-color: #d5e1ff;
-            border-bottom: 2px solid #4545ff;
+            cursor: pointer;
         }
 
         .valgt {
-            border: 2px solid black;
-            border-radius: 5px;
-        }
-
-        .menu {
-            background-color: black;
+            background-color: #720101;
         }
 
         #menu_nav {
             margin: auto;
+            z-index: 999;
             padding-top: 10px;
             padding-bottom: 10px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             flex-direction: row;
-            background-color: #95b2ff;
+            background-color: #a20606;
+            gap: 0px;
         }
 
         .menu_knapper {
-            margin: 10px;
+            width: 200px;
+            margin: 0px;
             font-size: 15px;
             color: white;
+            color: #ffebeb;
+        }
+
+        #filter_knapper {
+            width: 300px;
+            border-radius: 10px;
+            color: #ffebeb;
+        }
+
+        #filter_knapper:hover {
+            background-color: #c33c3c;
+            border-bottom: 4.5px solid #7c0000;
         }
 
         .pris {
@@ -164,20 +196,65 @@
             font-size: 20px;
         }
 
-        .slide {
-            animation-name: slide_kf;
-            animation-duration: 5s;
-            animation-iteration-count: 1;
-            animation-fill-mode: backwards;
+        #wrapper_se_mere_knap {
+            display: flex;
+            justify-content: flex-end;
+
         }
 
-        @keyframes slide_kf {
-            from {
-                transform: translatex(-15vw);
+        .se_mere_knap {
+            width: 100px;
+            border-radius: 10px;
+            color: #ffebeb;
+        }
+
+        .se_mere_knap:hover {
+            background-color: #c33c3c;
+            border-bottom: 4.5px solid #7c0000;
+        }
+
+        @media (max-width: 990px) {
+            #nav_filter {
+                /*                margin: 0 auto;*/
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
             }
 
-            to {
-                transform: translatex(180vw);
+            main {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+
+            #liste {
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            #first_section {
+                margin: auto;
+                max-width: 295px;
+                padding-top: 0px;
+            }
+
+            img {
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            h1 {
+                font-size: 45px;
+                position: absolute;
+                left: 75px;
+                top: 180px;
+            }
+
+            .splash_citat {
+                display: none;
             }
         }
 
@@ -187,7 +264,6 @@
 <body>
     <header>
         <nav id="menu_nav">
-            <h1>Bistro Babushka</h1>
             <button class="menu_knapper">Menu</button>
             <button class="menu_knapper">Om os</button>
             <button class="menu_knapper">Kontakt</button>
@@ -195,6 +271,8 @@
     </header>
     <div class="splash">
         <img src="billeder/billede_01.jpg" alt="Billede af madret" class="headerBillede">
+        <h1>Bistro Babushka</h1>
+        <p class="splash_citat">Russiske smagsoplevelser i hjertet af København</p>
     </div>
     <div id="first_section">
         <nav id="nav_filter">
@@ -218,6 +296,9 @@
                 <!--                <p class="oprindelsesRegion">Oprindelsesregion:</p>-->
                 <!--                <p class="kategori">Kategori:</p>-->
                 <p class="pris"></p>
+                <div id="wrapper_se_mere_knap">
+                    <button class="se_mere_knap">Se mere</button>
+                </div>
             </article>
         </main>
     </template>
