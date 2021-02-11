@@ -71,19 +71,12 @@
         article {
             padding: 10px;
             border-radius: 20px;
-            background-color: #f2f0ff;
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
         }
 
         h1 {
             font-family: 'Bungee Shade', cursive;
-            font-size: 70px;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            color: white;
-            position: relative;
-            top: 290px;
-            right: 400px;
 
         }
 
@@ -150,14 +143,9 @@
         }
 
         #menu_nav {
-            padding-top: 35px;
-            padding-bottom: 35px;
-            padding-right: 250px;
-            height: 100px;
             margin: auto;
-            max-width: 100%;
-            margin-top: 0px;
-            margin-bottom: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             display: flex;
             justify-content: flex-end;
             flex-direction: row;
@@ -165,20 +153,32 @@
         }
 
         .menu_knapper {
-            width: 100px;
-            background-color: white;
-            color: #95b2ff;
+            margin: 10px;
+            font-size: 15px;
+            color: white;
         }
 
+        .pris {
+            font-weight: bold;
+            color: green;
+            font-size: 20px;
+        }
 
         .slide {
-            animation-name: slidekf;
-            animation-duration: 1s;
+            animation-name: slide_kf;
+            animation-duration: 5s;
             animation-iteration-count: 1;
+            animation-fill-mode: backwards;
         }
 
-        @keyframes slidekf () {
-                {}
+        @keyframes slide_kf {
+            from {
+                transform: translatex(-15vw);
+            }
+
+            to {
+                transform: translatex(180vw);
+            }
         }
 
     </style>
@@ -187,6 +187,7 @@
 <body>
     <header>
         <nav id="menu_nav">
+            <h1>Bistro Babushka</h1>
             <button class="menu_knapper">Menu</button>
             <button class="menu_knapper">Om os</button>
             <button class="menu_knapper">Kontakt</button>
@@ -216,7 +217,7 @@
                 <p class="kortBeskrivelse"></p>
                 <!--                <p class="oprindelsesRegion">Oprindelsesregion:</p>-->
                 <!--                <p class="kategori">Kategori:</p>-->
-                <p class="pris">Pris:</p>
+                <p class="pris"></p>
             </article>
         </main>
     </template>
@@ -265,7 +266,7 @@
                         klon.querySelector(".kortBeskrivelse").textContent = ret.kortbeskrivelse;
                         //                        klon.querySelector(".oprindelsesRegion").textContent += ` ${ret.oprindelsesregion}`;
                         //                        klon.querySelector(".kategori").textContent += ` ${ret.kategori}`;
-                        klon.querySelector(".pris").textContent += ` ${ret.pris} ,-`;
+                        klon.querySelector(".pris").textContent = ` ${ret.pris} kr.`;
                         klon.querySelector(".retter").addEventListener("click", () => visDetaljer(ret));
                         console.log(ret);
                         container.appendChild(klon);
