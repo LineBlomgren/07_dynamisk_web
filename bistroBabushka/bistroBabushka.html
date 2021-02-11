@@ -13,6 +13,8 @@
             padding: 0px;
         }
 
+        header {}
+
         body {
             margin: 0px;
             padding: 0px;
@@ -25,7 +27,7 @@
 
         .splash {
             overflow: hidden;
-            background-color: black;
+            height: 370px;
         }
 
         .headerBillede {
@@ -51,7 +53,7 @@
 
         #first_section {
             margin: auto;
-            max-width: 1300px;
+            max-width: 900px;
         }
 
         #second_section {
@@ -88,7 +90,7 @@
         h2 {
             font-size: 35px;
             margin: auto;
-            max-width: 1200px;
+            max-width: 1150px;
             /*
 
             margin-left: 200px;
@@ -106,6 +108,10 @@
 
         p {
             margin-bottom: 5px;
+        }
+
+        .kortBeskrivelse {
+            margin-bottom: 20px;
         }
 
         nav {
@@ -131,6 +137,7 @@
 
         button:hover {
             background-color: #d5e1ff;
+            border-bottom: 1.5px solid #4545ff;
         }
 
         .valgt {
@@ -138,24 +145,64 @@
             color: #bbe6f4;
         }
 
+        .menu {
+            background-color: black;
+        }
+
+        #menu_nav {
+            padding-top: 35px;
+            padding-bottom: 35px;
+            padding-right: 250px;
+            height: 100px;
+            margin: auto;
+            max-width: 100%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            background-color: #95b2ff;
+        }
+
+        .menu_knapper {
+            width: 100px;
+            background-color: white;
+            color: #95b2ff;
+        }
+
+
+        .slide {
+            animation-name: slidekf;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes slidekf () {
+                {}
+        }
+
     </style>
 </head>
 
 <body>
     <header>
-        <div class="splash">
-            <h1>Bistro Babushka</h1>
-            <img src="billeder/billede_01.jpg" alt="Billede af madret" class="headerBillede">
-        </div>
+        <nav id="menu_nav">
+            <button class="menu_knapper">Menu</button>
+            <button class="menu_knapper">Om os</button>
+            <button class="menu_knapper">Kontakt</button>
+        </nav>
     </header>
+    <div class="splash">
+        <img src="billeder/billede_01.jpg" alt="Billede af madret" class="headerBillede">
+    </div>
     <div id="first_section">
-        <nav>
-            <button data-retter="alle" class="valgt">Alle</button>
-            <button data-retter="forretter">Forretter</button>
-            <button data-retter="hovedretter">Hovedretter</button>
-            <button data-retter="desserter">Desserter</button>
-            <button data-retter="sideorders">Sideorders</button>
-            <button data-retter="drikkevarer">Drikkevarer</button>
+        <nav id="nav_filter">
+            <button data-retter="alle" class="valgt" id="filter_knapper">Alle</button>
+            <button data-retter="forretter" id="filter_knapper">Forretter</button>
+            <button data-retter="hovedretter" id="filter_knapper">Hovedretter</button>
+            <button data-retter="desserter" id="filter_knapper">Desserter</button>
+            <button data-retter="sideorders" id="filter_knapper">Sideorders</button>
+            <button data-retter="drikkevarer" id="filter_knapper">Drikkevarer</button>
         </nav>
     </div>
     <h2>Alle</h2>
@@ -182,7 +229,7 @@
 
         function start() {
             console.log("DOM er loaded");
-            const filterknapper = document.querySelectorAll("nav button");
+            const filterknapper = document.querySelectorAll("#filter_knapper");
             filterknapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
             const muligheder = {
                 headers: {
